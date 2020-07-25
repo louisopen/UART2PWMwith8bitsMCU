@@ -1,14 +1,14 @@
 ### UARTtoPWMwith8bitsMCU
-HT-IDE3000 V7.99  HT66F317/HT66F318 28ssop
+HT-IDE3000 V8.02  HT66F317/HT66F318 28ssop
 
 Useing HT66F318 UART access to GPIO, LED matrix, EEPROM, ADC, I2C...(Same RS-485 driver)
 此專案利用PC軟件下達指令以存取MCU內部的EEPROM(64bytes), ADC(10bits), 後還可以持續增加I2C(Hi resolution adc), SPI(OLED display) 都透過UART 9600,N,8,1 協議比照RS-485通訊協議格式.
 
-* HT-IDE3000 V7.99
+* HT-IDE3000 V8.02
 ![Image](HT-IDE3000_version.jpg)
 * HOLTEK C Compiler V3/Assembly
 ![Image](ProjectCompiler.jpg)
-* HT66F318 Config, used 8Mhz X'tal external, VDD/VDDA all 3.3V
+* HT66F318 Config, used 8Mhz X'tal external, VDD/VDDA binding
 ![Image](ProjectOption1.jpg)
 ![Image](ProjectOption2.jpg)
 ![Image](ProjectOption3.jpg)

@@ -57,36 +57,46 @@ void PWM_output( unsigned int period, unsigned int duty)
  	} 	
 	*/
 	//set PWM duty for CCRA
-	//if(duty > 65535) //TM1
-	if(duty > 65535-256) //TM0,TM2
+	if(duty > 65535) //TM1
+	//if(duty > 65535-256) //TM0,TM2
 	{
-		//_tm2al  = 0xff;
- 		_tm2al  = 0x00;     
- 		_tm2ah  = 0xff; 		
+ 		_tm1al  = 0xFF;     
+ 		_tm1ah  = 0xFF;
+ 		//_tm2al  = 0x00;     
+ 		//_tm2ah  = 0xff; 		
 	}else if(duty < 1)
 	{  
-		_tm2al  = 0x00;     
- 		_tm2ah  = 0x00; 		 
+		_tm1al  = 0x00;     
+ 		_tm1ah  = 0x00; 
+		//_tm2al  = 0x00;     
+ 		//_tm2ah  = 0x00; 		 
 	}else
 	{
- 		_tm2al  = (duty & 0xff);     
- 		_tm2ah  = (duty & 0xff00) >> 8; 
+		_tm1al  = (duty & 0xff);     
+ 		_tm1ah  = (duty & 0xff00) >> 8;
+ 		//_tm2al  = (duty & 0xff);     
+ 		//_tm2ah  = (duty & 0xff00) >> 8; 
 	}	
  	//set PWM period for CCRP
- 	//if(period > 65535) //TM1
-	if(period > 65535-256) //TM0,TM2
+ 	if(period > 65535) //TM1
+	//if(period > 65535-256) //TM0,TM2
  	{   //max period = 65536 clocks
- 		_tm2rp = 0xff;	
+ 	 	_tm1rpl  = 0xFF;  
+ 		_tm1rph  = 0xFF; 
+ 		//_tm2rp = 0xff;	
  	}
- 	//else if(period < 1)
- 	else if(period < 256)
+ 	else if(period < 1)
+ 	//else if(period < 256)
  	{
- 		_tm2rp = 0x01;
+ 		_tm1rpl  = 0x01;  
+ 		_tm1rph  = 0x00; 
+ 		//_tm2rp = 0x01;
  	}
  	else 
  	{
- 		//_tm2rp = period & 0xff; 
- 		_tm2rp = (period & 0xff00) >> 8;  
+ 		_tm1rpl = period & 0xff; 
+ 		_tm1rph = (period & 0xff00) >> 8; 
+ 		//_tm2rp = (period & 0xff00) >> 8;  
  	} 	
 }
 //___________________________________________________________________
