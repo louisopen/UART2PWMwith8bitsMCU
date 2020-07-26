@@ -2,7 +2,7 @@
 //___________________________________________________________________
 // Description: 系統初始化相關程序
 //  Copyright@: 2019 BY Louis Huang / https://github.com/louisopen/
-//   File Name: Sys_Init.c
+//   File Name: PWMoutput.c
 //Targer Board: MK8002D
 //    MCU Body: HT66F317 HT66F318-28ssop
 //      Author: Louis Huang
@@ -18,14 +18,16 @@ unsigned int    wPWMPeriod,wPWMDuty;
 void PWM_output(unsigned int period, unsigned int duty);
 void PWM_output_test();
 
-//-----------------------------------
-//  Initial Freq = 166.67KHz TM1
-//  Initual Freq.= 31.25KHz TM0 TM2
-//-----------------------------------
+//___________________________________________________________________
+//Function: PWM relaod 
+//   INPUT: PWM (period, duty)
+//  OUTPUT: TP0,TP1,TP2
+//  Initial Freq = 166.67KHz TM1 @8MHz
+//  Initual Freq.= 31.25KHz TM0 TM2 @8MHz
+//___________________________________________________________________
 void PWM_output( unsigned int period, unsigned int duty)
 {	
-	/*
-	//set PWM duty for CCRA
+	//set PWM duty for CCRA	,for TM1(10bit ht66f318),  TM1(16bit ht66f317)
 	if(duty > 1023) 
 	{
  		_tm1al  = 0xff;     
@@ -39,7 +41,7 @@ void PWM_output( unsigned int period, unsigned int duty)
  		_tm1al  = (duty & 0xff);     
  		_tm1ah  = (duty & 0xff00) >> 8; 
 	}
- 	//set PWM period for CCRP
+ 	//set PWM period for CCRP ,for TM1(16bit ht66f317 f318)
  	if(period > 1023) //TM1
  	{   //max period = 1024 clocks
  		_tm1rpl  = 0x00;  
@@ -55,49 +57,47 @@ void PWM_output( unsigned int period, unsigned int duty)
  		_tm1rpl  = (period & 0xff);   
  		_tm1rph  = (period & 0xff00) >> 8;  
  	} 	
-	*/
-	//set PWM duty for CCRA
-	if(duty > 65535) //TM1
+	/*
+	//set PWM duty for CCRA	,for TM0, TM2
+	if(duty > 65535) //TM0,2 for ht66f318
 	//if(duty > 65535-256) //TM0,TM2
 	{
- 		_tm1al  = 0xFF;     
- 		_tm1ah  = 0xFF;
+ 		_tm0al  = 0xFF;     
+ 		_tm0ah  = 0xFF;
  		//_tm2al  = 0x00;     
  		//_tm2ah  = 0xff; 		
 	}else if(duty < 1)
 	{  
-		_tm1al  = 0x00;     
- 		_tm1ah  = 0x00; 
+		_tm0al  = 0x00;     
+ 		_tm0ah  = 0x00; 
 		//_tm2al  = 0x00;     
  		//_tm2ah  = 0x00; 		 
 	}else
 	{
-		_tm1al  = (duty & 0xff);     
- 		_tm1ah  = (duty & 0xff00) >> 8;
+		_tm0al  = (duty & 0xff);     
+ 		_tm0ah  = (duty & 0xff00) >> 8;
  		//_tm2al  = (duty & 0xff);     
  		//_tm2ah  = (duty & 0xff00) >> 8; 
 	}	
- 	//set PWM period for CCRP
- 	if(period > 65535) //TM1
+ 	//set PWM period for CCRP ,for TM0,TM2(10bit ht66f318), TM0(16bit ht66f317)
+ 	if(period > 65535) //TM0,2
 	//if(period > 65535-256) //TM0,TM2
  	{   //max period = 65536 clocks
- 	 	_tm1rpl  = 0xFF;  
- 		_tm1rph  = 0xFF; 
+ 	 	_tm0rp  = 0xFF;  
  		//_tm2rp = 0xff;	
  	}
  	else if(period < 1)
  	//else if(period < 256)
  	{
- 		_tm1rpl  = 0x01;  
- 		_tm1rph  = 0x00; 
+ 		_tm0rpl  = 0x01;  
  		//_tm2rp = 0x01;
  	}
  	else 
  	{
- 		_tm1rpl = period & 0xff; 
- 		_tm1rph = (period & 0xff00) >> 8; 
+ 		_tm0rp = (period & 0xff00) >> 8; 
  		//_tm2rp = (period & 0xff00) >> 8;  
  	} 	
+ 	*/
 }
 //___________________________________________________________________
 //Function: MCU PWM 初始化
@@ -151,7 +151,7 @@ void PWM_init()
 //___________________________________________________________________
 //Function: MCU PWM test sample
 //   INPUT: PWM (period, duty)
-//  OUTPUT: 166.67Khz with duty cycle on TM1
+//  OUTPUT: TP0,TP1,TP2
 //	  NOTE: 
 //___________________________________________________________________
 void PWM_output_test()
