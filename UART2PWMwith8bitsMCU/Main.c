@@ -2,7 +2,7 @@
 //___________________________________________________________________
 // Description: Main program
 //  Copyright@: 2019 BY Louis Huang / https://github.com/louisopen/
-//   File Name: UARTtoEEPROM.c
+//   File Name: main of UARTtoPWM
 //Targer Board: MK8002D 
 //    MCU Body: HT66F318-28ssop
 //      Author: Louis Huang

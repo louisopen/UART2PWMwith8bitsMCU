@@ -195,11 +195,11 @@ void GPIO_Init()
 	_pac = 0b01111110;		//PA0 timer LED, PA7 binding TP1(TM1) Capture input
 	//_papu = 0b11111111;	
 	//_pawu = 0b00000000; 	//default is 0.
-	_pa = 0xff;
+	_pa = 0x7E;
 
 	_pbc = 0b00000001;		//pb0 for an0, pb1 for Test, pb2 for buzzer, PB3(TP2) for PWM
 	//_pbpu =   0b11111110;		
-	_pb = 0x00;
+	_pb = 0x01;
 	/*
 	_pcc = 0xff;
 	_pcpu = 0b11111111;		

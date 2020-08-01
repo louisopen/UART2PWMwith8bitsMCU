@@ -192,16 +192,27 @@ void Uart_RXD_Manage(void)
 					Buffer_Send03(array_uart_rxbuff[5]*2);
 					break;				
 				case 0x06:	//if request: 44 06 02 dd EE FF A0 0A	ModBus Write PWM 
-					if(array_uart_rxbuff[2]==0x02)	//PWM setting request
+					if(array_uart_rxbuff[2]==0x02)	//PWM period,duty setting request
 					{
+
+					}
+					else if(array_uart_rxbuff[2]==0x06) //if request: 44 06 06 00 FF FF A0 0A
+					{	//ModBus Write PWM
 						reg_crc.byte.byte1 = array_uart_rxbuff[4];
 						reg_crc.byte.byte0 = array_uart_rxbuff[5];
-						PWM_output(reg_crc.u16,array_uart_rxbuff[3]);//period,duty of PWM output		
+						if(array_uart_rxbuff[3]==0x00) //PWM period
+						{
+							PWM_period( reg_crc.u16);
+						}
+						else	//PWM duty
+						{				
+							PWM_duty( reg_crc.u16);
+						}
 						for(i=0;i<4;i++)
 						{
 							array_uart_txbuff[i+2] = array_uart_rxbuff[i+2];
 						}
-						Buffer_Send03(4);
+						Buffer_Send06(4);
 					}
 					else	//if request: 44 06 00 00 EE FF A0 0A	ModBus Write EEPROM
 					{

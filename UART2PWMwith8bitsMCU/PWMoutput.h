@@ -16,7 +16,7 @@
 
 extern unsigned int    wPWMPeriod,wPWMDuty;
 
-extern void PWM_output(unsigned int period, unsigned int duty);
+extern void PWM_period( unsigned int period), PWM_duty( unsigned int duty);
 extern void PWM_output_test();
 
 #endif

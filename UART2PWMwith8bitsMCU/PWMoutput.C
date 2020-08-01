@@ -15,33 +15,19 @@
 
 unsigned int    wPWMPeriod,wPWMDuty;
 
-void PWM_output(unsigned int period, unsigned int duty);
+void PWM_period( unsigned int period), PWM_duty( unsigned int duty);
 void PWM_output_test();
 
 //___________________________________________________________________
 //Function: PWM relaod 
 //   INPUT: PWM (period, duty)
 //  OUTPUT: TP0,TP1,TP2
-//  Initial Freq = 166.67KHz TM1 @8MHz
-//  Initual Freq.= 31.25KHz TM0 TM2 @8MHz
+//  Initial Freq = 166.67KHz (TM1)10bit @8MHz
+//  Initual Freq.= 31.25KHz (TM0,TM2)16bit•¤?¤æ256úYûý? @8MHz
 //___________________________________________________________________
-void PWM_output( unsigned int period, unsigned int duty)
-{	
-	//set PWM duty for CCRA	,for TM1(10bit ht66f318),  TM1(16bit ht66f317)
-	if(duty > 1023) 
-	{
- 		_tm1al  = 0xff;     
- 		_tm1ah  = 0x03; 		
-	}else if(duty < 1)
-	{  
-		_tm1al  = 0x00;     
- 		_tm1ah  = 0x00; 		 
-	}else
-	{
- 		_tm1al  = (duty & 0xff);     
- 		_tm1ah  = (duty & 0xff00) >> 8; 
-	}
- 	//set PWM period for CCRP ,for TM1(16bit ht66f317 f318)
+void PWM_period( unsigned int period)
+{	/*
+ 	//set PWM period for CCRP ,for TM1(10bit ht66f318),  TM1(16bit ht66f317)
  	if(period > 1023) //TM1
  	{   //max period = 1024 clocks
  		_tm1rpl  = 0x00;  
@@ -57,48 +43,63 @@ void PWM_output( unsigned int period, unsigned int duty)
  		_tm1rpl  = (period & 0xff);   
  		_tm1rph  = (period & 0xff00) >> 8;  
  	} 	
-	/*
-	//set PWM duty for CCRA	,for TM0, TM2
-	if(duty > 65535) //TM0,2 for ht66f318
-	//if(duty > 65535-256) //TM0,TM2
-	{
- 		_tm0al  = 0xFF;     
- 		_tm0ah  = 0xFF;
- 		//_tm2al  = 0x00;     
- 		//_tm2ah  = 0xff; 		
-	}else if(duty < 1)
-	{  
-		_tm0al  = 0x00;     
- 		_tm0ah  = 0x00; 
-		//_tm2al  = 0x00;     
- 		//_tm2ah  = 0x00; 		 
-	}else
-	{
-		_tm0al  = (duty & 0xff);     
- 		_tm0ah  = (duty & 0xff00) >> 8;
- 		//_tm2al  = (duty & 0xff);     
- 		//_tm2ah  = (duty & 0xff00) >> 8; 
-	}	
- 	//set PWM period for CCRP ,for TM0,TM2(10bit ht66f318), TM0(16bit ht66f317)
- 	if(period > 65535) //TM0,2
-	//if(period > 65535-256) //TM0,TM2
+	*/
+ 	//set PWM period for CCRP TM0/TM2 for (16bit ht66f318), TM0(16bit ht66f317)
+	if(period > 65535-256) //TM0/TM2 for (16bit ht66f318)
  	{   //max period = 65536 clocks
- 	 	_tm0rp  = 0xFF;  
- 		//_tm2rp = 0xff;	
+ 	 	//_tm0rp  = 0xFF;  
+ 		_tm2rp = 0xff;	
  	}
- 	else if(period < 1)
- 	//else if(period < 256)
+ 	else if(period < 256)
  	{
- 		_tm0rpl  = 0x01;  
- 		//_tm2rp = 0x01;
+ 		//_tm0rpl  = 0x01;  
+ 		_tm2rp = 0x01;
  	}
  	else 
  	{
- 		_tm0rp = (period & 0xff00) >> 8; 
- 		//_tm2rp = (period & 0xff00) >> 8;  
- 	} 	
- 	*/
+ 		//_tm0rp = (period & 0xff00) >> 8; 
+ 		_tm2rp = (period & 0xff00) >> 8;  
+ 	}
 }
+void PWM_duty( unsigned int duty)
+{	/*
+	//set PWM duty for CCRA	,for TM1(10bit ht66f318),  TM1(16bit ht66f317)
+	if(duty > 1023) 
+	{
+ 		_tm1al  = 0xff;     
+ 		_tm1ah  = 0x03; 		
+	}else if(duty < 1)
+	{  
+		_tm1al  = 0x00;     
+ 		_tm1ah  = 0x00; 		 
+	}else
+	{
+ 		_tm1al  = (duty & 0xff);     
+ 		_tm1ah  = (duty & 0xff00) >> 8; 
+	}
+ 	*/
+	//set PWM duty for CCRA	TM0/TM2 for (16bit ht66f318), TM0(16bit ht66f317)
+	if(duty > 65535) //TM0/TM2 for (16bit ht66f318)
+	{
+ 		//_tm0al  = 0xFF;     
+ 		//_tm0ah  = 0xFF; 
+ 		_tm2al  = 0xFF;     
+ 		_tm2ah  = 0xFF; 		
+	}else if(duty < 1)
+	{  
+		//_tm0al  = 0x00;     
+ 		//_tm0ah  = 0x00;
+		_tm2al  = 0x00;     
+ 		_tm2ah  = 0x00; 		 
+	}else
+	{
+		//_tm0al  = (duty & 0xff);     
+ 		//_tm0ah  = (duty & 0xff00) >> 8;
+ 		_tm2al  = (duty & 0xff);     
+ 		_tm2ah  = (duty & 0xff00) >> 8; 
+	}	
+}
+
 //___________________________________________________________________
 //Function: MCU PWM ªì©l¤Æ
 //   INPUT: PWM , duty
@@ -113,7 +114,7 @@ void PWM_init()
 	_tm0c1 = 0B10101000;	//1010 1000 PWM_Mode, Active high, Non-invert,counter clear when comparator P match
 	_tm0al = 0x0C;				//CCRA¤ñ¸û­È³]¸m16bits
 	_tm0ah = 0x00;
-	_tm0rp = 0x00;				//CCRP¦³16bit ht66f317/ht66f318
+	_tm0rp = 0x01;				//CCRP¦³16bit ht66f317/ht66f318
 	//_t0ae = 1;					//interrupt for CCRA
 	//_t0pe = 1;					//interrupt for CCRP
 	//_mf0e = 1;					//Multifunction 0 interrupt enable
@@ -140,7 +141,7 @@ void PWM_init()
 	_tm2c1 = 0B10101000;	//1010 1000 PWM_Mode, Active high, Non-invert,counter clear when comparator P match
 	_tm2al = 0x0C;				//CCRA¤ñ¸û­È³]¸m16bits
 	_tm2ah = 0x00;
-	_tm2rp = 0x03;				//CCRP¦³16bit ht66f317/ht66f318
+	_tm2rp = 0x01;				//CCRP¦³16bit ht66f317/ht66f318
 	//_t2ae = 1;					//interrupt for CCRA
 	//_t2pe = 1;					//interrupt for CCRP
 	//_mf1e = 1;					//Multifunction 1 interrupt enable
@@ -166,15 +167,17 @@ void PWM_output_test()
     //wPWMDuty = 24;	//Low Duty 24 = 50%  2.98us
     
     wPWMPeriod = 244;	//32.787KHz at 8MHzOSC
+    //wPWMPeriod = 1023;//781.25Hz at 8MHzOSC
     wPWMDuty = 122;		//Low Duty 127 = 50%  15.2us
-    PWM_output( wPWMPeriod, wPWMDuty);
+    PWM_period( wPWMPeriod);
+    PWM_duty( wPWMDuty);
     
     /*
-    //¾A¦XTM0 TM2 PWM outpu period*256, duty 50% (31.25K¥H¤UªºÀW²v)
+    //¾A¦XTM0 TM2 PWM output period(¥²¶·¬O256ªº­¿¼Æ, duty 50% (31.25K¥H¤UªºÀW²v)
+   	wPWMPeriod = 1*256;	//	31.25K(³Ì§Ö)
     //wPWMPeriod = 3*256;	//	10.4KHz
-    //wPWMDuty = 3*256/2;	//
-    wPWMPeriod = 1*256;	//	31.25K
+    //wPWMPeriod = 255*256;	//	122.55Hz(³ÌºC)
     wPWMDuty = 1*256/2;	//
-    PWM_output( wPWMPeriod, wPWMDuty);
+    PWM_output(wPWMPeriod, wPWMDuty);
     */
 }
