@@ -23,8 +23,12 @@ __byte_type	system_flag;
 //___________________________________________________________________
 void Task_500ms()
 {	//TimeBase0
+	//if(TB0_int_flag==0) return;
+	//TB0_int_flag=0;
+	//TimeBase1
 	if(TB1_int_flag==0) return;
 	TB1_int_flag=0;
+	
 	count_2sec++;
 	if(count_2sec < 4) return;
 	count_2sec=0;
@@ -64,7 +68,7 @@ void TimerInitial()
 	//TimeModule0 can using STM 16bits(ht66f318) MuFunction0 ISR
 	_tm0c0 = 0b00000000; 		//fsys/4
 	_tm0c1 = 0xC1; 				//Compare with CCRA
-	_tm0al = 0x48; 				//CCRA比較值設置16bits(ht66f318)
+	_tm0al = 0x90; 				//CCRA比較值設置16bits(ht66f318)
 	_tm0ah = 0x01;				//3KHz for Buzzer
 	_tm0rp = 0x00;				//CCRP比較值只能設置高8bits(ht66f318)
 	_t0ae = 1;					//interrupt for CCRA
@@ -106,7 +110,6 @@ void TimerInitial()
 //___________________________________________________________________
 void WDT_ResetInit()	//WDT 溢出復位
 {
-	GPIO_Init();
  	Uart_Init();	
 	//Enable_ADC();
 		
@@ -128,23 +131,20 @@ void WDT_ResetInit()	//WDT 溢出復位
 //___________________________________________________________________
 void PowerOn_Init() //power up or reset pin normal
 {	
-	//First IO configration
-	_acerl = 0B00000001;	//define adc binding IO(IO被綁定在ADC)
-	_cpc = 0B00000000;		//CPC IO (比較器IO是綁定在OP)
+  	//SETHXT();		//fH source is external Hi speed
+	Fsys_select();	//Option: External 8MHz
 
-	Ram_Init();		//RAM clear all, first time power up.
-  	
-  	SETHXT();	//fH source is external Hi speed
-  	
 	//LVR low voltage reset select
 	//SETLVR_Voltage1_9();
 	SETLVR_Voltage2_55();
 	//SETLVR_Voltage3_15();
 
-	//WDT select
+	//GPIO configurations
+	GPIO_Init();
+
+	//WDT select & initial
 	SETWDTtime8192ms();		//WDT timer enable.
-	
-	//GET_EEPROM();	
+
 }
 //___________________________________________________________________
 //Function: Enter to HLAT mode
@@ -152,13 +152,7 @@ void PowerOn_Init() //power up or reset pin normal
 //	  NOTE: 
 //___________________________________________________________________
 void ReadyToHalt()
-{
-	/*	
-  	_nop();
-	_pbc = 0x0f;
-	_pb = 0x0f;
-	_pbs1 = 0;
-	*/		
+{	
 	//Disable_ADC();	
 	Uart_off();
 	_t1on  = 0;
@@ -192,17 +186,21 @@ void ReadyToHalt()
 //___________________________________________________________________
 void GPIO_Init()
 {
+	_acerl=0B00000001;	//binding IO  pb0,pb1,pb2,pa4,pa5,pa6,pa7,pb3 see you.
+	_scomc=0B00000000;	//binding IO  ...SCOMEN,pb5,pb6,pa3,pa1 see you
+	_cpc=0B00001001;	//binding IO  (pb5,pb6,pa3) see you
+	
 	_pac = 0b01111110;		//PA0 timer LED, PA7 binding TP1(TM1) Capture input
-	//_papu = 0b11111111;	
-	//_pawu = 0b00000000; 	//default is 0.
+	//_papu = 0b11111111;	//default is 0(disable).
+	//_pawu = 0b00000000; 	//default is 0(disable).
 	_pa = 0x7E;
 
 	_pbc = 0b00000001;		//pb0 for an0, pb1 for Test, pb2 for buzzer, PB3(TP2) for PWM
-	//_pbpu =   0b11111110;		
+	//_pbpu =   0b11111110;	//default is 0(disable).	
 	_pb = 0x01;
 	/*
 	_pcc = 0xff;
-	_pcpu = 0b11111111;		
+	_pcpu = 0b11111111;		//default is 0(disable).
 	_pc = 0;
 	*/
 	/*

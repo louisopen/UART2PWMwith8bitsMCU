@@ -27,32 +27,32 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00h     0024h     0024h    0001h      CODE               @INT1_ISR_code (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
      00h     0028h     0028h    0001h      CODE               @I2C_ISR_code (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
      00h     002ch     002fh    0004h      CODE               @UART_ISR_code (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
-     00h     0030h     0042h    0013h      CODE               _main (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\MAIN.OBJ)
-     00h     0043h     005ah    0018h      CODE               _Read_EEPROM (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\EEPROM.OBJ)
-     00h     005bh     0072h    0018h      CODE               _Write_EEPROM (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\EEPROM.OBJ)
-     00h     0073h     009bh    0029h      CODE               _TEST_EEPROM (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\EEPROM.OBJ)
-     00h     009ch     00a9h    000eh      CODE               _MuFunction0_ISR (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
-     00h     00aah     00b1h    0008h      CODE               _MuFunction2_ISR (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
-     00h     00b2h     00b6h    0005h      CODE               _Timebase0_ISR (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
-     00h     00b7h     00bbh    0005h      CODE               _Timebase1_ISR (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
-     00h     00bch     00cfh    0014h      CODE               _PWM_period (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\PWMOUTPUT.OBJ)
-     00h     00d0h     00dbh    000ch      CODE               _PWM_duty (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\PWMOUTPUT.OBJ)
-     00h     00dch     00e8h    000dh      CODE               _PWM_init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\PWMOUTPUT.OBJ)
-     00h     00e9h     00f6h    000eh      CODE               _PWM_output_test (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\PWMOUTPUT.OBJ)
-     00h     00f7h     010ah    0014h      CODE               _Task_500ms (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
-     00h     010bh     0116h    000ch      CODE               _TimerInitial (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
-     00h     0117h     011bh    0005h      CODE               _ReadyToHalt (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
-     00h     011ch     0124h    0009h      CODE               _GPIO_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
-     00h     0125h     012dh    0009h      CODE               _WDT_ResetInit (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
-     00h     012eh     0147h    001ah      CODE               _Ram_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
-     00h     0148h     0156h    000fh      CODE               _PowerOn_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
-     00h     0157h     0169h    0013h      CODE               _Uart_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
-     00h     016ah     01ceh    0065h      CODE               _UART_ISR (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
-     00h     01cfh     0206h    0038h      CODE               _calc_crc (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
-     00h     0207h     023ah    0034h      CODE               _Buffer_Send06 (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
-     00h     023bh     0270h    0036h      CODE               _Buffer_Send03 (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
-     00h     0271h     02feh    008eh      CODE               _Uart_RXD_Manage (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
-     00h     02ffh     0303h    0005h      CODE               _CROM2PROM (CROM2PROM)
+     00h     0030h     0043h    0014h      CODE               _main (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\MAIN.OBJ)
+     00h     0044h     005bh    0018h      CODE               _Read_EEPROM (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\EEPROM.OBJ)
+     00h     005ch     0073h    0018h      CODE               _Write_EEPROM (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\EEPROM.OBJ)
+     00h     0074h     009ch    0029h      CODE               _TEST_EEPROM (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\EEPROM.OBJ)
+     00h     009dh     00aah    000eh      CODE               _MuFunction0_ISR (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
+     00h     00abh     00b2h    0008h      CODE               _MuFunction2_ISR (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
+     00h     00b3h     00b7h    0005h      CODE               _Timebase0_ISR (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
+     00h     00b8h     00bch    0005h      CODE               _Timebase1_ISR (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
+     00h     00bdh     00d0h    0014h      CODE               _PWM_period (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\PWMOUTPUT.OBJ)
+     00h     00d1h     00dch    000ch      CODE               _PWM_duty (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\PWMOUTPUT.OBJ)
+     00h     00ddh     00e9h    000dh      CODE               _PWM_init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\PWMOUTPUT.OBJ)
+     00h     00eah     00f7h    000eh      CODE               _PWM_output_test (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\PWMOUTPUT.OBJ)
+     00h     00f8h     010bh    0014h      CODE               _Task_500ms (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
+     00h     010ch     0117h    000ch      CODE               _TimerInitial (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
+     00h     0118h     0120h    0009h      CODE               _WDT_ResetInit (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
+     00h     0121h     0125h    0005h      CODE               _ReadyToHalt (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
+     00h     0126h     0133h    000eh      CODE               _GPIO_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
+     00h     0134h     013bh    0008h      CODE               _PowerOn_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
+     00h     013ch     0155h    001ah      CODE               _Ram_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
+     00h     0156h     0168h    0013h      CODE               _Uart_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
+     00h     0169h     01cdh    0065h      CODE               _UART_ISR (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
+     00h     01ceh     0205h    0038h      CODE               _calc_crc (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
+     00h     0206h     0239h    0034h      CODE               _Buffer_Send06 (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
+     00h     023ah     026fh    0036h      CODE               _Buffer_Send03 (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
+     00h     0270h     02fdh    008eh      CODE               _Uart_RXD_Manage (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
+     00h     02feh     0302h    0005h      CODE               _CROM2PROM (CROM2PROM)
      00h     00a0h     00a1h    0002h      DATA     2.5       @HCCINIT0 (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\INTERRUPT.OBJ)
      00h     00a2h     00a5h    0004h      DATA     1         @HCCINIT0 (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\PWMOUTPUT.OBJ)
      00h     00a6h     00a7h    0002h      DATA     5         @HCCINIT0 (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
@@ -86,10 +86,10 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      Bank    Start     End      Length     Class    AvgIns    Name
      00h     00e6h     00e6h    0000h      LOCAL    0         @dummy (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\MAIN.OBJ)
      00h     00e6h     00e6h    0000h      LOCAL    0         _main (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\MAIN.OBJ)
-     00h     00ddh     00ddh    0000h      LOCAL    0         _PowerOn_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
      00h     00ddh     00ddh    0000h      LOCAL    0         _Ram_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
-     00h     00ddh     00ddh    0000h      LOCAL    0         _WDT_ResetInit (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
+     00h     00ddh     00ddh    0000h      LOCAL    0         _PowerOn_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
      00h     00ddh     00ddh    0000h      LOCAL    0         _GPIO_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
+     00h     00ddh     00ddh    0000h      LOCAL    0         _WDT_ResetInit (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
      00h     00ddh     00ddh    0000h      LOCAL    0         _Uart_Init (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\UART.OBJ)
      00h     00ddh     00ddh    0000h      LOCAL    0         _TimerInitial (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\SYS_INIT.OBJ)
      00h     00dfh     00e2h    0004h      LOCAL    4.25      _TEST_EEPROM (C:\ChipsGarden\醇法\MK8000\MK8000-Power PCB\UART2PWMwith8bitsMCU\UART2PWMwith8bitsMCU\EEPROM.OBJ)
@@ -122,41 +122,41 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      Public Symbols Information
      Address            Public by Name
      0018h              _ADC_ISR
-     023bh              _Buffer_Send03
-     0207h              _Buffer_Send06
+     023ah              _Buffer_Send03
+     0206h              _Buffer_Send06
      0008h              _Comparator_ISR
-     0300h              _Crom2Prom
-     02ffh              _Crom2PromNext
-     011ch              _GPIO_Init
+     02ffh              _Crom2Prom
+     02feh              _Crom2PromNext
+     0126h              _GPIO_Init
      0028h              _I2C_ISR
      0004h              _INT0_ISR
      0024h              _INT1_ISR
      0002h              _Key_Scan
-     009ch              _MuFunction0_ISR
-     00aah              _MuFunction2_ISR
-     00d0h              _PWM_duty
-     00dch              _PWM_init
-     00e9h              _PWM_output_test
-     00bch              _PWM_period
-     0148h              _PowerOn_Init
-     012eh              _Ram_Init
-     0043h              _Read_EEPROM
-     0117h              _ReadyToHalt
-     0073h              _TEST_EEPROM
-     00f7h              _Task_500ms
-     00b2h              _Timebase0_ISR
-     00b7h              _Timebase1_ISR
-     010bh              _TimerInitial
-     016ah              _UART_ISR
-     0157h              _Uart_Init
-     0271h              _Uart_RXD_Manage
+     009dh              _MuFunction0_ISR
+     00abh              _MuFunction2_ISR
+     00d1h              _PWM_duty
+     00ddh              _PWM_init
+     00eah              _PWM_output_test
+     00bdh              _PWM_period
+     0134h              _PowerOn_Init
+     013ch              _Ram_Init
+     0044h              _Read_EEPROM
+     0121h              _ReadyToHalt
+     0074h              _TEST_EEPROM
+     00f8h              _Task_500ms
+     00b3h              _Timebase0_ISR
+     00b8h              _Timebase1_ISR
+     010ch              _TimerInitial
+     0169h              _UART_ISR
+     0156h              _Uart_Init
+     0270h              _Uart_RXD_Manage
      0010h              _Uart_off
-     0125h              _WDT_ResetInit
-     005bh              _Write_EEPROM
+     0118h              _WDT_ResetInit
+     005ch              _Write_EEPROM
      00deh              _Write_EEPROM_2
      00abh              _array_uart_rxbuff
      00b3h              _array_uart_txbuff
-     01cfh              _calc_crc
+     01ceh              _calc_crc
      00a7h              _count_2sec
      00a1h              _interrupt_flag
      00a0h              _isr_temp0
@@ -202,10 +202,10 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      0024h              _INT1_ISR
      0028h              _I2C_ISR
      0030h              _main
-     0043h              _Read_EEPROM
-     005bh              _Write_EEPROM
-     0073h              _TEST_EEPROM
-     009ch              _MuFunction0_ISR
+     0044h              _Read_EEPROM
+     005ch              _Write_EEPROM
+     0074h              _TEST_EEPROM
+     009dh              _MuFunction0_ISR
      00a0h              _isr_temp0
      00a1h              _interrupt_flag
      00a2h              _wPWMDuty
@@ -213,13 +213,13 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00a6h              _system_flag
      00a7h              _count_2sec
      00a8h              _reg_crc
-     00aah              _MuFunction2_ISR
      00aah              _uart_flag
      00abh              _array_uart_rxbuff
-     00b2h              _Timebase0_ISR
+     00abh              _MuFunction2_ISR
      00b3h              _array_uart_txbuff
-     00b7h              _Timebase1_ISR
-     00bch              _PWM_period
+     00b3h              _Timebase0_ISR
+     00b8h              _Timebase1_ISR
+     00bdh              _PWM_period
      00c3h              _tx_guide
      00c4h              _rx_guide
      00c5h              _tx_index
@@ -234,8 +234,8 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00ceh              r114
      00cfh              r214
      00d0h              ra14
-     00d0h              _PWM_duty
      00d1h              r11c
+     00d1h              _PWM_duty
      00d2h              r21c
      00d3h              r120
      00d4h              r220
@@ -247,29 +247,29 @@ Input Library File: C:\Program Files\Holtek MCU Development Tools\HT-IDE3000V8.x
      00dah              r62c
      00dbh              r72c
      00dch              ra2c
-     00dch              _PWM_init
+     00ddh              _PWM_init
      00deh              _Write_EEPROM_2
-     00e9h              _PWM_output_test
-     00f7h              _Task_500ms
-     010bh              _TimerInitial
-     0117h              _ReadyToHalt
-     011ch              _GPIO_Init
-     0125h              _WDT_ResetInit
-     012eh              _Ram_Init
-     0148h              _PowerOn_Init
-     0157h              _Uart_Init
-     016ah              _UART_ISR
-     01cfh              _calc_crc
-     0207h              _Buffer_Send06
-     023bh              _Buffer_Send03
-     0271h              _Uart_RXD_Manage
-     02ffh              _Crom2PromNext
-     0300h              _Crom2Prom
+     00eah              _PWM_output_test
+     00f8h              _Task_500ms
+     010ch              _TimerInitial
+     0118h              _WDT_ResetInit
+     0121h              _ReadyToHalt
+     0126h              _GPIO_Init
+     0134h              _PowerOn_Init
+     013ch              _Ram_Init
+     0156h              _Uart_Init
+     0169h              _UART_ISR
+     01ceh              _calc_crc
+     0206h              _Buffer_Send06
+     023ah              _Buffer_Send03
+     0270h              _Uart_RXD_Manage
+     02feh              _Crom2PromNext
+     02ffh              _Crom2Prom
 
 
 ROM Usage Statistics
      Size      Used     Percentage
-     1000h     02f5h    18%
+     1000h     02f4h    18%
 
 RAM Usage Statistics
     Bank      Size      Used     Percentage
@@ -289,10 +289,10 @@ _Uart_TXD_Send: 2
 Call Tree
     @dummy
         _main (0)
+            _Ram_Init (1)
             _PowerOn_Init (1)
-                _Ram_Init (2)
-            _WDT_ResetInit (1)
                 _GPIO_Init (2)
+            _WDT_ResetInit (1)
                 _Uart_Init (2)
                 _TimerInitial (2)
             _TEST_EEPROM (1)
