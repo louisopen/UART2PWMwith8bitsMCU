@@ -3,8 +3,9 @@
 此專案利用PC軟件通過UART port下達指令以存取MCU內部的EEPROM(64bytes), PWM(10bits or 16bit) 都透過UART port<br>
 
 * Project Option:<br>
-HXT (External 8MHz X'tal); 可選項有:HXT(400K~16Mhz),HIRC8M,HIRC12M,HIRC16M<br>
-LICR (Low speed internal RC for TB0/TB1); 可選項有:LXT(32.768Khz),LIRC(32Khz)<br>
+HXT (External 8MHz X'tal): 可選項有:HXT(400K~16Mhz),HIRC4M,HIRC8M,HIRC12M<br>
+LICR (Low speed internal RC for TB0/TB1): 可選項有:LXT(32.768Khz),LIRC(32Khz)<br>
+WatchDog: enable<br>
 
 * UART Baudrate: 9600,n,8,1 (協議格式參照RS-485通訊協議格式)<br>
 
